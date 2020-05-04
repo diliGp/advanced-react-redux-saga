@@ -1,0 +1,27 @@
+@import "../../Scss/themes";
+@import "../../Scss/mixins";
+
+header {
+    @include boxShadow($themes);
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        .Logo {
+            a {
+                color: red;
+            }
+        }
+    
+        nav {
+            display: flex;
+            ul {
+                li {
+                    margin: 0 10px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+

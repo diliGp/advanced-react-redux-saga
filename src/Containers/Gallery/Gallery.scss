@@ -1,0 +1,18 @@
+@import '../../Scss/themes';
+@import '../../Scss/mixins';
+
+.Gallery {
+    .Grid {
+        display: flex;
+        flex-flow: row wrap;
+        flex-basis: 100%;
+        .Image {
+            margin: 0 8px 8px 0;
+            width: 30%;
+            img {
+                width: 100%;
+                @include boxShadow($themes);
+            }
+        }
+    }
+}
