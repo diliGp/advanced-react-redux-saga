@@ -23,6 +23,14 @@ describe('Router Component', () => {
     wrapper = setup(store);
   });
 
+  afterEach(() => {
+    /**
+     * `mount` method actually mounts the component in JSDOM(Virtual Copy of Browser DOM) ,
+     * so to make sure it doesn't conflict to other test, unmounting it here.
+     */
+    wrapper.unmount();
+  });
+
   test('renders learn react link', () => {
     const container = findByAttr(wrapper, 'Router');
     expect(container.length).toBe(1);
