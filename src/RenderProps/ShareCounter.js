@@ -23,12 +23,14 @@ class ShareCounter extends Component {
 
     render() {
         return (
-            <div>
-                {this.props.render({
-                    count: this.state.count,
-                    increment: this.increment,
-                    decrement: this.decrement
-                })}
+            <div data-test="ShareCounterContainer">
+                {
+                    this.props.render({
+                        count: this.state.count,
+                        increment: this.increment,
+                        decrement: this.decrement
+                    })
+                }
             </div>
         )
     }

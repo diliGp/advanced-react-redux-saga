@@ -5,10 +5,10 @@ import './Header.scss';
 
 const Header = () => {
     return (
-        <header className="theme-light">
+        <header className="theme-light" data-test="Header">
             <div className="container">
-                <Logo />
-                <Navigations />
+                <Logo data-test="LogoComponent" />
+                <Navigations data-test="NavComponent" />
             </div>
         </header>
     )

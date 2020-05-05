@@ -1,9 +1,9 @@
-import { takeEvery, all, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import { galleryActionTypes } from './actionTypes';
 import API from '../../Services/API';
 import { galleryActionCreators } from './actionCreator';
 
-function* getAllImages(action) {
+export function* getAllImages(action) {
     try {
         const { data } = yield call(API.gallery.getAll);
         yield put(galleryActionCreators.getImages.success([...data]));
@@ -14,9 +14,7 @@ function* getAllImages(action) {
 
 
 function* gallerySaga(params) {
-    yield all([
-        takeEvery(galleryActionTypes.getImages.request, getAllImages)
-    ]);
+    yield takeEvery(galleryActionTypes.getImages.request, getAllImages);
 };
 
 export default gallerySaga;

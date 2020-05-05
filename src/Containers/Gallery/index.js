@@ -5,10 +5,13 @@ import './Gallery.scss';
 
 const Gallery = ({ images }) => {
     return (
-        <section className="Gallery">
+        <section className="Gallery" data-test="Gallery">
             <h1>Gallery Section</h1>
             <div className="Grid">
-                {images && images.length > 0 && images.map((image, i) => <Image key={i} {...image} />)}
+                {
+                    images && images.length > 0 &&
+                    images.map(image => <Image data-test="Image" key={image.id} {...image} />)
+                }
             </div>
         </section>
     )

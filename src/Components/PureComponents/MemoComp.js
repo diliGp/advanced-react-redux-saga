@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { shallowEqual } from 'react-redux';
 
 const MemoComp = ({count}) => {
-    console.log('MemoComp rendered...');
     return (
         <div>
             {count}

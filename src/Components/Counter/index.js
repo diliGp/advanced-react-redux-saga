@@ -7,12 +7,12 @@ import ShareCounter from '../../RenderProps/ShareCounter';
 const Counter = () => {
     return (
         <>
-            <section>
+            <section data-test="HOCSection">
                 <h2>HOC Section</h2>
                 <ClickCounter />
                 <HoverCounter />
             </section>
-            <section>
+            <section data-test="RenderPropSection">
                 <h2>Render Props</h2>
                 <ShareCounter
                     render={props => (
