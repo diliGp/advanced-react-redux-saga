@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-const ShareCounter = (WrappedComponent, data) => {
+const ShareCounter = (WrappedComponent) => {
     return class extends Component {
         constructor(props) {
             super(props);

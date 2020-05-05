@@ -1,4 +1,4 @@
-import React, { PureComponent, Component } from 'react'
+import React, { PureComponent } from 'react'
 // import { shallowEqual } from 'react-redux';
 
 class CompA extends PureComponent {
@@ -10,6 +10,10 @@ class CompA extends PureComponent {
         }
     }
 
+    /**
+     * If we'll use `Component` instead of `PureComponent`,
+     * we can achieve the same behavior with this life cycle method.
+     */
     /* shouldComponentUpdate(nextProps, nextStates) {
         return !shallowEqual(this.state, nextStates);
     } */
@@ -21,13 +25,6 @@ class CompA extends PureComponent {
         this.setState({
             count: 0
         });
-
-        /**
-         * Rendering will happen always with this way.
-         */
-        /* this.setState({
-            count: this.state.count + 1
-        }); */
     }
 
     render() {
