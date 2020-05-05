@@ -15,16 +15,16 @@ const PureComponents = lazy(() => import('./Components/PureComponents'));
 class Router extends Component {
   render() {
     return (
-      <div className="Router theme-light">
+      <div className="Router theme-light" data-test="Router">
         <Header />
         <main>
           <div className="container">
             <Suspense fallback={<Loader />}>
               <Switch>
-                <Route path="/pure-components" render={props => <PureComponents {...props} />} />
-                <Route path="/counters" render={props => <Counter {...props} />} />
-                <Route path="/gallery" render={props => <Gallery {...props} />} />
-                <Route path="/" render={props => <Home {...props} />} />
+                <Route data-test="PureComponentsRoute" path="/pure-components" render={props => <PureComponents {...props} />} />
+                <Route data-test="CounterRoute" path="/counters" render={props => <Counter {...props} />} />
+                <Route data-test="GalleryRoute" path="/gallery" render={props => <Gallery {...props} />} />
+                <Route data-test="HomeRoute" path="/" render={props => <Home {...props} />} />
               </Switch>
             </Suspense>
           </div>

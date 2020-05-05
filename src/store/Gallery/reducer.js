@@ -4,9 +4,7 @@ import { galleryActionTypes } from "./actionTypes";
 const initialState = {
     processing: false,
     images: [],
-    error: {
-
-    }
+    error: ''
 };
 
 export const galleryReducer = (state = initialState, action) => {
@@ -16,11 +14,12 @@ export const galleryReducer = (state = initialState, action) => {
                 draft.processing = !draft.processing;
                 return draft;
             case galleryActionTypes.getImages.success:
-                draft.processing = !draft.processing;
+                draft.processing = false;
+                draft.error = '';
                 draft.images = action.payload;
                 return draft;
             case galleryActionTypes.getImages.failure:
-                draft.processing = !draft.processing;
+                draft.processing = false;
                 draft.error = action.payload;
                 return draft;
             default:

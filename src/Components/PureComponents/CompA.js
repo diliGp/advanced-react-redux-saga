@@ -31,7 +31,6 @@ class CompA extends PureComponent {
     }
 
     render() {
-        console.log('rendered...');
         return (
             <div>
                 <button onClick={this.handleClick}>Click Me</button>
