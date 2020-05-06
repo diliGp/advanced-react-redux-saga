@@ -1,7 +1,9 @@
 import GalleryAPI from "./GalleryAPI";
+import CommentsAPI from "./CommentsAPI";
 
 const API = {
-    gallery: new GalleryAPI()
+    gallery: new GalleryAPI(),
+    comments: new CommentsAPI()
 };
 
 Object.freeze(API);

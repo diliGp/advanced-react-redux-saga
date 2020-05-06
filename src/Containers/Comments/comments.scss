@@ -1,0 +1,19 @@
+@import '../../Scss/mixins';
+@import '../../Scss/themes';
+
+.CommentsWrapper {
+    display: flex;
+    section {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 50%;
+
+        ul {
+            padding: 0;
+            li {
+                @include boxShadow($themes);
+                padding: 10px;
+            }
+        }
+    }
+}
