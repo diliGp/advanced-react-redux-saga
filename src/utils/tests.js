@@ -1,7 +1,22 @@
 import { runSaga } from "redux-saga";
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from "../store/rootReducer";
+
+export const sagaMiddleware = createSagaMiddleware();
 
 export const findByAttr = (wrapper, attr) => {
     return wrapper.find(`[data-test="${attr}"]`);
+}
+
+export const mockStore = (initialStore = {}) => {
+    const middlewares = [sagaMiddleware];
+    const createStoreWithMiddlewares = applyMiddleware(...middlewares)(createStore);
+
+    return createStoreWithMiddlewares(
+        rootReducer, 
+        initialStore
+    );
 }
 
 /**

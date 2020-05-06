@@ -6,8 +6,8 @@ const ListComments = ({ comments }) => {
     }
 
     return (
-        <ul>
-            {comments.map((comment, i) => <li key={i}>{comment}</li>)}
+        <ul data-test="ListComments">
+            {comments.map((comment, i) => <li data-test="CommentLi" key={i}>{comment}</li>)}
         </ul>
     )
 }

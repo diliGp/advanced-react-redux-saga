@@ -17,6 +17,9 @@ const Navigations = () => {
                 <li>
                     <Link to="/pure-components">Pure Components</Link>
                 </li>
+                <li>
+                    <Link to="/comments">Comments</Link>
+                </li>
             </ul>
         </nav>
     )

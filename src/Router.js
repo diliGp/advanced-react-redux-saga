@@ -11,6 +11,7 @@ const Home = lazy(() => import('./Components/Home'));
 const Gallery = lazy(() => import('./Containers/Gallery'));
 const Counter = lazy(() => import('./Components/Counter'));
 const PureComponents = lazy(() => import('./Components/PureComponents'));
+const Comments = lazy(() => import('./Containers/Comments'));
 
 class Router extends Component {
   render() {
@@ -21,6 +22,7 @@ class Router extends Component {
           <div className="container">
             <Suspense fallback={<Loader />}>
               <Switch>
+                <Route data-test="CommentsRoute" path="/comments" render={props => <Comments {...props} />} />
                 <Route data-test="PureComponentsRoute" path="/pure-components" render={props => <PureComponents {...props} />} />
                 <Route data-test="CounterRoute" path="/counters" render={props => <Counter {...props} />} />
                 <Route data-test="GalleryRoute" path="/gallery" render={props => <Gallery {...props} />} />
